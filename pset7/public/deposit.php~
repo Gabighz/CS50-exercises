@@ -1,0 +1,24 @@
+<?php
+	require("../includes/config.php");
+
+        $rows = query("SELECT * FROM Portfolio WHERE id = ?", $_SESSION["id"]);
+	$stock["name"] = query("SELECT username FROM users WHERE id = ?", $_SESSION["id"]);
+	$userinfo = query("SELECT cash FROM users WHERE id = ?", $_SESSION["id"]);
+	$cash = $userinfo[0]["cash"];
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET")
+    {
+	render("deposit-form.php", ["title" => "Deposit funds"]);
+    }
+
+    else if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+
+	$update_cash = query("UPDATE users SET cash = cash + ? WHERE id = ?", $_POST["cash"], $_SESSION["id"]);
+
+	redirect("index.php");
+
+    }
+
+?>

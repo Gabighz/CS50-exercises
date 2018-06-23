@@ -1,0 +1,12 @@
+<?php require_once("../public/quote.php");
+$stock = lookup($_POST["symbol"]); ?>
+
+<form action="quote.php" method="get">
+	<div id="quote">
+		<p>
+			<!-- delete owned stock -->
+			<!-- update cash value -->
+			<!-- redirect to portofolio -->
+		</p>
+	</div>
+</form>

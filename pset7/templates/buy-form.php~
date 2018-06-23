@@ -1,0 +1,46 @@
+<!--<?php	require_once("../public/buy.php");
+
+	$rows = query("SELECT * FROM Portfolio WHERE id = ?", $_SESSION["id"]);
+	$stock["name"] = query("SELECT username FROM users WHERE id = ?", $_SESSION["id"]);
+	$userinfo = query("SELECT cash FROM users WHERE id = ?", $_SESSION["id"]);
+	$cash = $userinfo[0]["cash"];
+
+	
+
+	$positions = [];
+	foreach ($rows as $row)
+	{
+		$stock = lookup($_POST["symbol"]);
+		if ($stock !== false)
+    		{
+        		$positions[] = [
+            		"name" => $stock["name"],
+            		"price" => $stock["price"],
+            		"shares" => $row["shares"],
+            		"symbol" => $row["symbol"]
+        		];
+    		}
+	}
+	
+
+ ?> -->
+
+
+<form action="buy.php" method="post">
+<p> Please type from which company you want to buy stock from and how much </p>
+    <fieldset>
+        <fieldset>
+        <div class="form-group">
+            <input autofocus class="form-control" name="symbol" placeholder="Symbol" type="text"/>
+        </div>
+        <div class="form-group">
+            <input autofocus class="form-control" name="shares" placeholder="Shares" type="text"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" type="submit">Buy</button>
+        </div>
+    </fieldset>
+    </fieldset>
+</form>
+
+

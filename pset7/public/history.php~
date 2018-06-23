@@ -1,0 +1,27 @@
+<?php	require("../includes/config.php");
+
+	render("history-form.php", ["title" => "History"]);
+
+	$rows = query("SELECT * FROM history WHERE id = ?", $_SESSION["id"]);
+
+	
+
+
+	$positions = [];
+	foreach ($rows as $row)
+	{
+		$stock = lookup($row["symbol"]);
+		if ($stock !== false)
+    		{
+        		$positions[] = [
+            		"name" => $stock["name"],
+            		"price" => $stock["price"],
+            		"shares" => $row["shares"],
+            		"symbol" => $row["symbol"]
+        		];
+    		}
+	}
+
+
+				
+?>

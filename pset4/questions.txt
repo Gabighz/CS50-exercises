@@ -1,0 +1,19 @@
+0. BMP supports a 32-bit palette, PNG supports a 24-bit palette,
+GIF supports 8-bit per pixel, JPEG supports 24-bit per pixel.
+
+1. Only GIF supports animation.
+
+2. Lossy compression reduces data size but also degrades the 
+quality, while lossless compression does not degrade the image
+by recreating it in it's original size from the compressed data.
+
+3. Uncompressed: BMP; Lossy compressed: JPEG; Lossless 
+compressed: PNG, GIF;
+
+4. When a file is deleted on a FAT file system, it's move to 
+the hard disk's list of free clusters, therefore recoverable.
+
+5. Either by overwritting it with zeros or by
+applying Gutmann's patterns.
+
+
